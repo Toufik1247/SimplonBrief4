@@ -281,7 +281,7 @@ function gameInterface(auth: Auth) {
 
             clearInterval(timerId);
 
-            let time: number = 5;
+            let time: number = 30;
             timerIcon.innerHTML = "";
             timerIcon.innerText = time.toString();
 

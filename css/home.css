@@ -1,0 +1,687 @@
+.stones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh
+}
+
+.stones img {
+    position: absolute;
+    max-width: 100%;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate
+}
+
+.stones img:nth-child(2n) {
+    animation-delay: 0s;
+    animation-timing-function: ease-in
+}
+
+.stones img:nth-child(2n+1) {
+    animation-delay: 3s;
+    animation-timing-function: ease-out
+}
+
+.stones img:nth-child(3n) {
+    animation-delay: 6s;
+    animation-timing-function: linear
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0)
+    }
+
+    100% {
+        transform: translateY(300px)
+    }
+}
+
+.stones img {
+    animation-name: float
+}
+
+.homeContent {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: inherit;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform: translateY(0);
+    transition: all .3s ease-out, opacity .5s ease-out;
+    opacity: 1
+}
+
+.homeContent.hide {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-200%);
+    transition: all .7s ease-out, opacity .5s ease-out
+}
+
+.blur {
+    transition: all 1s ease;
+    filter: blur(7px)
+}
+
+.homeTitle {
+    height: 70%;
+    display: flex;
+    justify-content: center
+}
+
+.homeTitle>h1 {
+    padding: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-self: center;
+    font-size: min(clamp(6vw, 18vw, 160px), 18vw);
+    color: #65ef63
+}
+
+.homeButton {
+    display: flex;
+    width: 80%;
+    height: 30%
+}
+
+.btn {
+    border-radius: 20px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0
+}
+
+button,
+button:focus,
+button:active {
+    border: 0;
+    outline: 0
+}
+
+button {
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 70vw;
+    max-width: 600px
+}
+
+button:active {
+    top: 2px;
+    left: 3px;
+    box-shadow: none
+}
+
+button img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto
+}
+
+button span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: min(6vw, 60px);
+    font-family: 'Bangers', cursive;
+    color: white
+}
+
+.loginFrame {
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url('/assets/loginFrame.svg');
+    background-color: transparent;
+    text-align: center;
+    z-index: 1;
+    transform: translate(-700%, -100%);
+    transition: all 1s ease, opacity .3s ease
+}
+
+.loginFrame.show {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 70vw;
+    height: 100vw;
+    max-height: 714px;
+    max-width: 519px;
+    top: 50%;
+    left: 50%;
+    transition: transform .7s ease, opacity .3s ease;
+    transform: translate(-50%, -50%)
+}
+
+.cross {
+    display: flex;
+    visibility: hidden;
+    background-size: 100% 100%;
+    background-image: url('/assets/cross.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 2.5em;
+    width: 2.5em;
+    min-width: 30px;
+    max-width: 40px;
+    position: absolute;
+    top: 7%;
+    right: 7%
+}
+
+.cross.show {
+    visibility: visible;
+    cursor: pointer
+}
+
+.chooseNickname {
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    font-size: min(7vw, 60px);
+    margin: 1% 0
+}
+
+.playGuest {
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    font-size: min(5vw, 40px);
+    margin: 0
+}
+
+.notSaved {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 75%;
+    font-size: min(3vw, 20px);
+    margin: 0
+}
+
+.inputNickname {
+    width: 70%;
+    border-radius: 15px;
+    border: 2px solid #4caf50;
+    font-size: 18px;
+    font-family: 'Bangers', cursive;
+    padding: 10px 20px;
+    margin: 1% 0;
+    outline: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+}
+
+.inputNickname:focus {
+    border-color: #007ee0;
+    background-color: #fff;
+    box-shadow: 10px 4px 8px rgba(0, 0, 0, 0.5)
+}
+
+.inputNickname::placeholder {
+    color: #999
+}
+
+.btnLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    padding: 0;
+    margin: 5% 0
+}
+
+.btnLogin img {
+    width: 100%
+}
+
+.btnLoginLabel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: min(8vw, 60px);
+    letter-spacing: .05rem;
+    font-family: 'Bangers', cursive;
+    color: white
+}
+
+.inputEmail {
+    display: flex;
+    justify-content: left;
+    width: 100%
+}
+
+.createAccount {
+    font-family: 'Bangers', cursive;
+    font-size: min(4vw, 20px)
+}
+
+.playcontent {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw
+}
+
+.row1 {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    max-width: 1500px;
+    height: 10vh;
+    background-color: transparent
+}
+
+.homeIconBox {
+    background-color: transparent;
+    height: 10vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.homeIcon {
+    background: url(/assets/homeIcon.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 10vh;
+    width: 10vw
+}
+
+.userInfoBox {
+    background-color: transparent;
+    height: 10vh;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userName {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.userScore {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.userBestScore {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.logoutButton {
+    display: flex;
+    width: 4vw;
+    height: 4vw;
+    background-image: url(../assets/logoutButton.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.questionsCount {
+    display: flex;
+    font-size: 2rem;
+    color: black
+}
+
+.row2 {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    max-width: 1500px;
+    height: 70vh;
+    background-color: transparent;
+}
+
+.timerBox {
+    height: 30vh;
+    width: 20vw;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.timerIcon {
+    background: url(/assets/timer.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    font-size: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    width: 10vw;
+    min-width: 150px
+}
+
+.questionBox {
+    height: 60vh;
+    width: 70vw;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.questionDash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(/assets/questionDash.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    width: 100%
+}
+
+.questionDash span {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+    display: flex;
+    padding-top: 7vh;
+    width: 20vw;
+    min-width: 400px;
+    height: 20vh;
+    font-size: 3rem;
+}
+
+.nextQuestionBox {
+    height: 20vh;
+    width: 20vw;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative
+}
+
+.nextQuestionBubble {
+    background: url(/assets/nextQuestionBubble.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    visibility: hidden;
+    position: absolute;
+    bottom: 65%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .3s ease-in-out
+}
+
+.narrow {
+    background: url(/assets/narrow.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    height: 15vh;
+    width: 10vw;
+    min-width: 150px;
+    z-index: 1
+}
+
+.row3 {
+    display: flex;
+    width: 100vw;
+    max-width: 1500px;
+    height: 10vh;
+    align-items: center;
+    justify-content: center
+}
+
+
+.answerSpan {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 48vw;
+    height: 7vh;
+    font-size: min(clamp(2vw, 18vw, 40px), 18vw)
+}
+
+.question1Box,
+.question3Box,
+.question2Box,
+.question4Box {
+    background: url(/assets/questionBoxBg.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    height: 7vh;
+    width: 48vw;
+    max-width: 500px;
+    cursor: pointer
+}
+
+.column1,
+.column2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    height: 20vh;
+    width: 50vw;
+    max-width: 600px;
+    align-items: center
+}
+
+@keyframes rotateY {
+    0% {
+        transform: rotateY(0deg);
+        opacity: 0
+    }
+
+    50% {
+        transform: rotateY(180deg);
+        opacity: 1
+    }
+
+    100% {
+        transform: rotateY(180deg);
+        opacity: 0
+    }
+}
+
+.rotateY {
+    animation: rotateY .9s linear forwards
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:890px) {
+
+
+    .cross {
+        background-size: 50% 50%;
+        top: 12%;
+        right: 5%
+    }
+
+
+    .playcontent {
+        justify-content: unset;
+    }
+
+    .row1 {
+        padding: 10px;
+        height: 10vh;
+    }
+
+    .homeIconBox {
+        height: 5vh;
+        width: 15vw;
+    }
+
+
+    .userName,
+    .userScore,
+    .userBestScore,
+    .logoutButton {
+        margin: auto auto;
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 1.1em;
+    }
+
+    .userInfoBox {
+        margin: 0 auto;
+        height: 10vh;
+        width: 100vw;
+        justify-content: center;
+        padding-right: 10px;
+    }
+
+    .logoutButton {
+        width: 9vw;
+        height: 5vh;
+        margin-left: auto;
+    }
+
+    .row2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 60vh;
+    }
+
+    .timerBox {
+        margin-right: 10px;
+        order: 1;
+        height: 10vh;
+    }
+
+    .timerIcon {
+        font-size: 6vh;
+        height: 10vh;
+        width: 15vh;
+        min-width: unset;
+    }
+
+    .questionBox {
+        margin: 0 auto;
+        order: 3;
+        margin-left: auto;
+        height: 50vh;
+        width: 100vw;
+    }
+
+    .questionDash {
+        height: 50vh;
+        width: 95vw
+    }
+
+    .questionDash span {
+        width: 80vw;
+        min-width: unset;
+        height: 40vh;
+        font-size: 1.2rem;
+    }
+
+    .nextQuestionBox {
+        margin-left: 10px;
+        order: 2;
+        height: 10vh;
+    }
+
+    .nextQuestionBubble {
+        display: none;
+    }
+
+    .narrow {
+        height: 10vh;
+        width: 20vw;
+        min-width: unset;
+    }
+
+    .row3 {
+        height: 20vh;
+    }
+
+
+
+    .answerSpan {
+        font-size: 1.5rem;
+    }
+
+
+
+    .column1,
+    .column2 {
+        height: 30vh;
+        width: 50vw;
+    }
+}
+
+@media(max-width:600px) {
+    .loginFrame.show {
+        padding: 10% 0
+    }
+}

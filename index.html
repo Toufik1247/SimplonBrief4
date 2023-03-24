@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/styles.css">
+	<title>QuarterQuiz</title>
+</head>
+
+<body>
+	<div class="stones">
+		<img src="./assets/SVG/1.svg" alt="stone 1" width="86" height="112">
+		<img src="./assets/SVG/2.svg" alt="stone 2" width="236" height="158">
+		<img src="./assets/SVG/3.svg" alt="stone 3" width="128" height="54">
+		<img src="./assets/SVG/4.svg" alt="stone 4" width="66" height="72">
+		<img src="./assets/SVG/5.svg" alt="stone 5" width="28" height="30">
+		<img src="./assets/SVG/6.svg" alt="stone 6" width="14" height="14">
+		<img src="./assets/SVG/7.svg" alt="stone 7" width="12" height="14">
+		<img src="./assets/SVG/8.svg" alt="stone 8" width="8" height="6">
+		<img src="./assets/SVG/9.svg" alt="stone 9" width="6" height="6">
+		<img src="./assets/SVG/10.svg" alt="stone 10" width="14" height="14">
+		<img src="./assets/SVG/11.svg" alt="stone 11" width="8" height="8">
+		<img src="./assets/SVG/12.svg" alt="stone 12" width="28" height="30">
+		<img src="./assets/SVG/13.svg" alt="stone 13" width="16" height="18">
+		<img src="./assets/SVG/14.svg" alt="stone 14" width="28" height="30">
+		<img src="./assets/SVG/15.svg" alt="stone 15" width="6" height="4">
+		<img src="./assets/SVG/16.svg" alt="stone 16" width="6" height="6">
+		<img src="./assets/SVG/17.svg" alt="stone 17" width="8" height="6">
+		<img src="./assets/SVG/18.svg" alt="stone 18" width="34" height="46">
+		<img src="./assets/SVG/19.svg" alt="stone 19" width="26" height="30">
+		<img src="./assets/SVG/20.svg" alt="stone 20" width="14" height="16">
+		<img src="./assets/SVG/21.svg" alt="stone 21" width="68" height="54">
+		<img src="./assets/SVG/1.svg" alt="stone 22" width="86" height="112">
+		<img src="./assets/SVG/3.svg" alt="stone 23" width="128" height="54">
+		<img src="./assets/SVG/4.svg" alt="stone 24" width="66" height="72">
+		<img src="./assets/SVG/5.svg" alt="stone 25" width="28" height="30">
+		<img src="./assets/SVG/6.svg" alt="stone 26" width="14" height="14">
+		<img src="./assets/SVG/7.svg" alt="stone 27" width="12" height="14">
+		<img src="./assets/SVG/8.svg" alt="stone 28" width="8" height="6">
+		<img src="./assets/SVG/9.svg" alt="stone 29" width="6" height="6">
+		<img src="./assets/SVG/10.svg" alt="stone 30" width="14" height="14">
+		<img src="./assets/SVG/11.svg" alt="stone 31" width="8" height="8">
+		<img src="./assets/SVG/12.svg" alt="stone 32" width="28" height="30">
+		<img src="./assets/SVG/13.svg" alt="stone 33" width="16" height="18">
+		<img src="./assets/SVG/14.svg" alt="stone 34" width="28" height="30">
+		<img src="./assets/SVG/15.svg" alt="stone 35" width="6" height="4">
+		<img src="./assets/SVG/16.svg" alt="stone 36" width="6" height="6">
+		<img src="./assets/SVG/17.svg" alt="stone 37" width="8" height="6">
+		<img src="./assets/SVG/18.svg" alt="stone 38" width="34" height="46">
+		<img src="./assets/SVG/19.svg" alt="stone 39" width="26" height="30">
+		<img src="./assets/SVG/20.svg" alt="stone 40" width="14" height="16">
+		<img src="./assets/SVG/21.svg" alt="stone 41" width="68" height="54">
+
+	</div>
+	<div class="background"></div>
+	<div id="homeContent" class="homeContent">
+		<input type="hidden" id="isUserLoggedIn" value="false">
+
+		<div class="homeTitle">
+			<h1>the quarterquiz</h1>
+		</div>
+		<button class="btn">
+			<img src="/assets/homeButton.svg" alt="Bouton Home">
+			<span>cliquez pour jouer !</span>
+		</button>
+	</div>
+
+	<div id="loginFrame" class="loginFrame">
+		<span class="chooseNickname">connectez-vous</span>
+		<div id="cross" class="cross"></div>
+		<input type="email" id="userEmail" class="inputNickname" placeholder="adresse email" required>
+		<input type="password" id="userPassword" class="inputNickname" placeholder="mot de passe" required>
+		<span class="playGuest">OU</span>
+		<span class="playGuest">jouer en tant qu'invité ?</span>
+		<span class="notSaved">(progression non sauvegardée)</span>
+		<input class="inputNickname" type="text" id="anonUser" placeholder="Entrez votre pseudo" required>
+		<button type="button" class="btnLogin">
+			<img src="/assets/BoutonLogin.svg" alt="Bouton Login">
+			<span class="btnLoginLabel">jouez !</span>
+		</button>
+		<span id="errorMessage" class="error-message"></span>
+		<button type="submit" id="signUpButton" class="createAccount">Créer un compte</button>
+	</div>
+
+	<script type="module" src="/ts/index.ts"></script>
+</body>
+
+</html>

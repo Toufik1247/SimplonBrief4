@@ -1,0 +1,62 @@
+@import url(./home.css);
+
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Bangers", cursive;
+    font-size: 1em;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-out, transform 0.5s ease-out;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background-image: url("/assets/bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+@keyframes backgroundReveal {
+    0% {
+        background-size: 100% 50%;
+    }
+
+    100% {
+        background-size: 100% 100%;
+    }
+}
+
+.background.animatedBackground {
+    animation: backgroundReveal 0.4s ease-out forwards;
+}
+
+
+@media (max-width:2500px) {
+    body {
+        background-size: 150% 100%;
+    }
+
+}

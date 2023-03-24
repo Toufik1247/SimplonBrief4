@@ -1,0 +1,29 @@
+{
+  "name": "quizz",
+  "version": "1.0.0",
+  "description": "A simple quizz based on typscrist",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel serve index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Toufik1247/SimplonBrief4.git"
+  },
+  "author": "Toufik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Toufik1247/SimplonBrief4/issues"
+  },
+  "homepage": "https://github.com/Toufik1247/SimplonBrief4#readme",
+  "devDependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.8.3",
+    "parcel": "^2.8.3",
+    "process": "^0.11.10",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "firebase": "^9.17.2"
+  }
+}
